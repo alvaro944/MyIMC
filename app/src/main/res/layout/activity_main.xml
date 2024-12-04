@@ -1,0 +1,141 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <!-- Toolbar -->
+    <TextView
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6200EE"
+        android:text="Índice de Masa Corporal (IMC)"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:textStyle="bold" />
+
+    <!-- Contenedor principal (Scroll para mejor soporte) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Entrada de Peso -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tv_peso_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peso (kg)"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/et_peso"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Introduce tu peso"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <!-- Entrada de Altura -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tv_altura_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Altura (cm)"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/et_altura"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Introduce tu altura"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <!-- Selección de Género -->
+            <RadioGroup
+                android:id="@+id/rg_genero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingBottom="16dp">
+
+                <RadioButton
+                    android:id="@+id/rb_hombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hombre" />
+
+                <RadioButton
+                    android:id="@+id/rb_mujer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mujer"
+                    android:layout_marginStart="16dp" />
+            </RadioGroup>
+
+            <!-- Botón Calcular -->
+            <Button
+                android:id="@+id/btn_calcular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calcular"
+                android:backgroundTint="#6200EE"
+                android:textColor="@android:color/white" />
+
+            <!-- Resultado del IMC -->
+            <TextView
+                android:id="@+id/tv_imc"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:gravity="center"
+                android:paddingTop="24dp"
+                android:text=""
+                android:textSize="96sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Estado (Normal, Obesidad, etc.) -->
+    <TextView
+        android:id="@+id/tv_estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_gravity="bottom"
+        android:text="" />
+</LinearLayout>
